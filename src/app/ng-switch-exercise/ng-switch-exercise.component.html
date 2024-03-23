@@ -1,0 +1,39 @@
+<h3>Pick your favorite item</h3>
+<div>
+  <input
+    type="radio"
+    name="item"
+    value="teapot"
+    [(ngModel)]="favoriteItem"
+  />Teapot <br />
+  <input type="radio" name="item" value="lamp" [(ngModel)]="favoriteItem" />Lamp
+  <br />
+  <input
+    type="radio"
+    name="item"
+    value="phone"
+    [(ngModel)]="favoriteItem"
+  />Phone <br />
+  <input
+    type="radio"
+    name="item"
+    value="tv"
+    [(ngModel)]="favoriteItem"
+  />Television <br />
+  <input
+    type="radio"
+    name="item"
+    value="fishbowl"
+    [(ngModel)]="favoriteItem"
+  />Fishbowl
+</div>
+<ng-container [ngSwitch]="favoriteItem">
+  <p *ngSwitchCase="'teapot'">I'm a little Teapot, short and stout!</p>
+  <p *ngSwitchCase="'lamp'">
+    This is brightest Lamp in town. <br />Are you as bright as Lamp?
+  </p>
+  <p *ngSwitchCase="'phone'">Which is the slimmest Phone?</p>
+  <p *ngSwitchCase="'tv'">Has anyone seen my Television?</p>
+  <p *ngSwitchCase="'fishbowl'">Fishbowl is strange and mysterious.</p>
+  <p *ngSwitchDefault>you didn't chose any of them</p>
+</ng-container>
